@@ -4,12 +4,15 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.button.MaterialButton;
 
 import java.util.List;
 
@@ -35,15 +38,16 @@ public class AdapterMovies extends RecyclerView.Adapter<AdapterMovies.ViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.
-                holder.
+        holder.modelTittleMovies.setText(lstMovies.get(position).getTittle());
+        holder.modelImgMovies.setImageResource(lstMovies.get(position).getImgMovie());
+        holder.modelContentMovies.setText(lstMovies.get(position).getSinopse());
 
 
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return lstMovies.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -53,6 +57,9 @@ public class AdapterMovies extends RecyclerView.Adapter<AdapterMovies.ViewHolder
         TextView modelTittleMovies;
         TextView modelContentMovies;
 
+        Button btnAssMovie;
+        Button btnVmMovie;
+
         public ViewHolder(@NonNull View itemView) {
 
             super(itemView);
@@ -60,6 +67,8 @@ public class AdapterMovies extends RecyclerView.Adapter<AdapterMovies.ViewHolder
             modelImgMovies = itemView.findViewById(R.id.modelImgMovies);
             modelCardMovies = itemView.findViewById(R.id.modelCardMovies);
             modelContentMovies = itemView.findViewById(R.id.modelContentMovies);
+            btnAssMovie = itemView.findViewById(R.id.btnAssMovie);
+            btnVmMovie = itemView.findViewById(R.id.btnVmMovie);
 
         }
     }

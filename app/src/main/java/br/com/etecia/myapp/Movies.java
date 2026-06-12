@@ -2,10 +2,10 @@ package br.com.etecia.myapp;
 
 public class Movies {
 private String tittle;
-private String sinopse;
+private int sinopse;
 private int ImgMovie;
 
-    public Movies(String tittle, String sinopse, int imgMovie) {
+    public Movies(String tittle, int sinopse, int imgMovie) {
         this.tittle = tittle;
         this.sinopse = sinopse;
         this.ImgMovie = imgMovie;
@@ -19,11 +19,11 @@ private int ImgMovie;
         this.tittle = tittle;
     }
 
-    public String getSinopse() {
+    public int getSinopse() {
         return sinopse;
     }
 
-    public void setSinopse(String sinopse) {
+    public void setSinopse(int sinopse) {
         this.sinopse = sinopse;
     }
 

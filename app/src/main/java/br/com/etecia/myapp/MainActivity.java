@@ -1,5 +1,6 @@
 package br.com.etecia.myapp;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -7,9 +8,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+    List<Movies> lstMovies;
+    RecyclerView idRecMovies;
 
+    @SuppressLint("SuspiciousIndentation")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,5 +30,18 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        idRecMovies = findViewById(R.id.idRecMovies);
+
+        lstMovies = new ArrayList<>();
+
+        lstMovies.add(new Movies("Herry Potter e a Pedra Filosofal",R.string.sinopse_hppf,R.drawable.hppf));
+
+
+        AdapterMovies adapterMovies = new AdapterMovies(getApplicationContext(), lstMovies);
+
+        idRecMovies.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+
+        idRecMovies.setAdapter(adapterMovies);
+
     }
 }

@@ -6,10 +6,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="#2c2c2c">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Catalogo de Filmes"
+        android:textSize="25sp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:layout_margin="10dp"
+        android:textColor="#FFFFFF"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/idReView"
+        android:id="@+id/idRecMovies"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="5dp" />
